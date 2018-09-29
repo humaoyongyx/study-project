@@ -1,5 +1,7 @@
 package issac.study.tutorial;
 
+import issac.study.tutorial.aop.start.AopApp;
+
 /**
  * Hello world!
  */
@@ -7,7 +9,7 @@ public class App {
 
 
     public static void main(String[] args) throws Throwable {
-        issac.study.tutorial.aop.start.App.main(args);
+        AopApp.main(args);
     }
 
 

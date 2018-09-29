@@ -17,7 +17,7 @@ public class TestAspect2 {
         System.out.println("around2-1 after...");
     }
 
-    @MyAround("test")
+    @MyAround(".*test2\\(\\)")
     public void around2(Proceed proceed) throws Throwable {
         System.out.println("around2-2 before...");
         proceed.execute();

@@ -10,7 +10,7 @@ import java.util.concurrent.Future;
 /**
  * Hello world!
  */
-public class App {
+public class ThreadApp {
 
 
     public static void main(String[] args) throws Throwable {

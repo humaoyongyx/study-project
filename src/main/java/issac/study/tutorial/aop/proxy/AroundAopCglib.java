@@ -64,7 +64,12 @@ public class AroundAopCglib extends AbstractAopCglib {
         ProceedImp now = null;
         int size = list.size() - 1;
         for (int i = list.size() - 1; i >= 0; i--) {
-            if (i > 1 && i == size) {
+            if (size == 0) {
+                now = new ProceedImp(list.get(0), null);
+                now.setCallback(callback);
+                break;
+            }
+            if (i > 0 && i == size) {
                 ProceedImp init = new ProceedImp(list.get(i), null);
                 init.setCallback(callback);
                 now = new ProceedImp(list.get(i - 1), init);
