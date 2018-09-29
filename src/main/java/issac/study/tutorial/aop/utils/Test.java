@@ -11,7 +11,7 @@ import java.util.concurrent.ExecutionException;
 public class Test {
 
     public static void main(String[] args) throws IllegalAccessException, InstantiationException, InvocationTargetException, ExecutionException, InterruptedException {
-        BeanFactory.scanComponents("issac.study.tutorial.aop");
+        BeanFactory.scanComponents(BeanFactory.PATH_COMPONENTS);
         TestService test = (TestService) BeanFactory.getBean("test");
 
         test.test();

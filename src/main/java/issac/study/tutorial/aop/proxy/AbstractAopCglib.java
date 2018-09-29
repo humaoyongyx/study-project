@@ -25,16 +25,16 @@ public abstract class AbstractAopCglib implements MethodInterceptor {
     // 实现回调方法
     @Override
     public Object intercept(final Object obj, Method method, final Object[] args, final MethodProxy proxy) throws Throwable {
-        before();
+        before(obj, method, args, proxy);
         Object invoke = abstractIntercept(obj, method, args, proxy);
-        after();
+        after(obj, method, args, proxy);
         return invoke;
     }
 
     public abstract Object abstractIntercept(final Object obj, Method method, final Object[] args, final MethodProxy proxy) throws Throwable;
 
 
-    public abstract void before();
+    public abstract void before(final Object obj, Method method, final Object[] args, final MethodProxy proxy) throws Throwable;
 
-    public abstract void after();
+    public abstract void after(final Object obj, Method method, final Object[] args, final MethodProxy proxy) throws Throwable;
 }

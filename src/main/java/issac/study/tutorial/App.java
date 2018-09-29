@@ -13,8 +13,13 @@ import java.util.concurrent.Future;
 public class App {
 
 
-    public static void main(String[] args) throws ExecutionException, InterruptedException, IllegalAccessException, InvocationTargetException, InstantiationException {
+    public static void main(String[] args) throws Throwable {
 
+        AopDemoStart();
+
+    }
+
+    public static void ThreadDemoStart() throws IllegalAccessException, InvocationTargetException, InstantiationException, ExecutionException, InterruptedException {
         BeanFactory.scanBeans("issac.study.tutorial.thread");
         BeanFactory.scanComponentsAndAsync("issac.study.tutorial.thread");
         Object pool1 = BeanFactory.getBean("pool1");
@@ -26,8 +31,12 @@ public class App {
             Future future = (Future) testService.test();
             //   System.out.println(future.get());
         }
+    }
 
-
+    public static void AopDemoStart() throws InterruptedException, ExecutionException, InstantiationException, IllegalAccessException {
+        issac.study.tutorial.aop.utils.BeanFactory.scanComponents(issac.study.tutorial.aop.utils.BeanFactory.PATH_COMPONENTS);
+        issac.study.tutorial.aop.service.TestService test = (issac.study.tutorial.aop.service.TestService) issac.study.tutorial.aop.utils.BeanFactory.getBean("test");
+        test.test();
     }
 
 

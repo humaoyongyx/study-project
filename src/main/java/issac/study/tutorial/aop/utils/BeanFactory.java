@@ -26,6 +26,10 @@ public class BeanFactory {
         beanMap.put(name, obj);
     }
 
+    public static String PATH_DEFAULT = "issac.study.tutorial.aop";
+    public static String PATH_COMPONENTS = PATH_DEFAULT;
+    public static String PATH_ASPECT = PATH_DEFAULT;
+
     public static void scanConfigAndBeans(String path) throws IllegalAccessException, InstantiationException, InvocationTargetException {
         Reflections reflections = new Reflections(path);
         Set<Class<?>> typesAnnotatedWith = reflections.getTypesAnnotatedWith(Config.class);

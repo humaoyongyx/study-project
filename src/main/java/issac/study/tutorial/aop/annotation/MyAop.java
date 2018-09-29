@@ -6,10 +6,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Created by issac.hu on 2018/9/27.
+ * Created by issac.hu on 2018/9/29.
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface MyBefore {
+public @interface MyAop {
     String value() default "";
 }

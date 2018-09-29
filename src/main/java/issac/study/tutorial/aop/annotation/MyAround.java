@@ -11,7 +11,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface MyAround {
-    String value();
-
-    String pointCut() default "";
+    String value() default ""; //正则匹配
 }
