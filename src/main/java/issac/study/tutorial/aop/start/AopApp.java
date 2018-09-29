@@ -16,7 +16,7 @@ public class AopApp {
     }
 
     public static void AopDemoStart() throws InterruptedException, ExecutionException, InstantiationException, IllegalAccessException {
-        BeanFactory.scanComponents(issac.study.tutorial.aop.utils.BeanFactory.PATH_COMPONENTS);
+        BeanFactory.scanComponents(BeanFactory.PATH_COMPONENTS);
         TestService test = (TestService) BeanFactory.getBean("test");
         test.test();
        /* Test2Service test2 = (Test2Service)BeanFactory.getBean("test2");
